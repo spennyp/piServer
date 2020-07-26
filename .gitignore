@@ -1,1 +1,4 @@
-pyServerEnv
+piServerEnv
+piServer.sock
+__pycache__
+secrets.txt

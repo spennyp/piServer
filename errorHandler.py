@@ -2,8 +2,9 @@ import logging
 import traceback
 import os
 import requests
+from config import secrets
 
-errorWebhook = os.environ["ERROR_WEBHOOK"]
+errorWebhook = secrets["ERROR_WEBHOOK"]
 
 def handleError(e):
     try:

@@ -1,0 +1,85 @@
+accessControl:
+    salt: CpRDNwP1XJp4Dnwy2YrBk897VaSvmqQ6
+api:
+    key: FFD1C9FBE68546648FB7A95A34EFC869
+controls:
+-   children:
+    -   command: OCTO1
+        name: Toggle Light
+    -   command: OCTO2
+        name: Toggle Printer Power
+    name: Custom Controls
+events:
+    enabled: true
+    subscriptions:
+    -   command: python3 ~/.octoprint/scripts/startPrint.py
+        event: PrintStarted
+        type: system
+    -   command: python3 ~/.octoprint/scripts/donePrint.py
+        event: PrintDone
+        type: system
+plugins:
+    ThermalRunaway: null
+    announcements:
+        _config_version: 1
+        channels:
+            _blog:
+                read_until: 1593102540
+            _important:
+                read_until: 1521111600
+            _octopi:
+                read_until: 1573722900
+            _plugins:
+                read_until: 1594875600
+            _releases:
+                read_until: 1594814400
+    cura:
+        cura_engine: /usr/local/bin/cura_engine
+    discovery:
+        publicPort: 80
+        upnpUuid: 247d70ba-193b-4eec-b8dd-ef0bf2024873
+    errortracking:
+        unique_id: 82cbfb1e-3eb5-4156-a25d-92fbb304ff3b
+    gcodesystemcommands:
+        command_definitions:
+        -   command: /home/pi/.octoprint/scripts/toggleLight.sh
+            id: '1'
+        -   command: /home/pi/.octoprint/scripts/togglePrinterPower.sh
+            id: '2'
+    softwareupdate:
+        _config_version: 7
+    tracking:
+        enabled: false
+        unique_id: a3bad4a4-78ad-424d-8944-a7ebaac28de9
+printerProfiles:
+    default: _default
+serial:
+    autoconnect: true
+server:
+    commands:
+        serverRestartCommand: sudo service octoprint restart
+        systemRestartCommand: sudo shutdown -r now
+        systemShutdownCommand: sudo shutdown -h now
+    firstRun: false
+    onlineCheck:
+        enabled: true
+    pluginBlacklist:
+        enabled: true
+    secretKey: ZSyhywgyRuXTTZD1yW5KvI08lCictAJQ
+    seenWizards:
+        corewizard: 3
+        tracking: null
+temperature:
+    profiles:
+    -   bed: 100
+        chamber: null
+        extruder: 210
+        name: ABS
+    -   bed: 60
+        chamber: null
+        extruder: 180
+        name: PLA
+webcam:
+    ffmpeg: /usr/bin/ffmpeg
+    snapshot: http://127.0.0.1:8080/?action=snapshot
+    stream: /webcam/?action=stream

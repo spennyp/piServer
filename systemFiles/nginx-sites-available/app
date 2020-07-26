@@ -1,0 +1,9 @@
+server {
+	listen 8060;
+	server_name 192.168.0.200;
+	
+	location / {
+		include proxy_params;
+		proxy_pass http://unix:/home/pi/Developer/piServer/piServer.sock;
+	}
+}

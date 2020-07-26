@@ -1,10 +1,11 @@
 from flask_restful import Resource, Api, request
 from errorHandler import handleError
 import requests
-import os
+from config import secrets
 
-# Extract environment veriables
-octoprintWebhook = os.environ["OCTOPRINT_WEBHOOK"]
+
+# Extracting secrets
+octoprintWebhook = secrets["OCTOPRINT_WEBHOOK"]
 
 class TellSlack(Resource):
     def get(self):
