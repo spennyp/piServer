@@ -20,28 +20,28 @@
 ## Installation
 1. Clone this repo
 2. Create a virtual envrionment called pyServerEnv
-'''
-virtualenv -p python3 pyServerEnv
-'''
+```
+virtualenv -p python3 piServerEnv
+```
 3. Activate the virtual envrionment
-'''
-source /pyServerEnv/bin/activate
-'''
+```
+source /piServerEnv/bin/activate
+```
 4. Install the requirments
-'''
+```
 pip3 install -r requirements.txt
-'''
+```
 
 
 ## Running the app
 1. Make sure to activate the virtual envrionment
-'''
-source /pyServerEnv/bin/activate
-'''
+```
+source /piServerEnv/bin/activate
+```
 2. Start the server 
-'''
+```
 python3 app.py
-'''
+```
 
 I am running it with Gunicorn and Nginx, which manages starting and restating my server. 
 
